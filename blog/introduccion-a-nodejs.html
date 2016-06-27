@@ -1,0 +1,82 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Introducción a NodeJS</title><link rel="stylesheet" href="/assets/css/styles.css"/><link rel="canonical" href="http://dbugcode.com/blog/introduccion-a-nodejs"/><link rel="alternate" type="application/rss+xml" title="Vías al desarrollo web." href="http://dbugcode.com/feed.xml"/></head><body><div class="container"><header class="main-header"><div class="row"><div class="col col-4"><a class="site-logo" href="/" title="dbugcode Home">dbugcode</a><nav class="navbar"><ul class="nav">  </nav></div></div></header>
+<div class="row"><div class="col col-4"><header class="post-header"><h1 class="post-title">Introducción a NodeJS</h1><div class="post-meta"><b class="post-meta-author">Maikel</b><b class="post-meta-divider">-</b><b class="post-meta-date">Feb 18, 2016</b></div></header><article class="post-content"><h2 id="introduccin-a-nodejs">Introducción a NodeJS</h2>
+
+<p>Creo que en este momento en el que estamos con respecto al desarrollo web en general pienso que todos deberíamos conocer sobre Node. Este es el primero de una serie de publicaciones donde estaré proporcionándote información sobre cómo utilizar Javascript del lado del servidor y como convertirte en un desarrollador Fullstack con este lenguaje.
+<!--more--></p>
+
+<h3 id="tabla-de-contenido">Tabla de contenido</h3>
+<ol>
+  <li><a href="#" title="¿Que es Node?">¿Que es Node?</a></li>
+  <li><a href="#" title="Como obtenerlo">Como obtenerlo</a></li>
+  <li><a href="#" title="Instalación">Instalación</a></li>
+  <li><a href="#" title="Gestor de paquetes npm">Gestor de paquetes npm</a></li>
+  <li><a href="#" title="Conclusiones">Conclusiones</a></li>
+</ol>
+
+<h3 id="que-es-node">¿Que es Node?</h3>
+
+<p>La definición más simple que les puedo dar es que Node es la vía para crear aplicaciones web con Javascript. Si eres un desarrollador que ya estas familiarizado con algunas librerías como jQuery o UnderscoreJS para enriquecer páginas o aplicaciones web en el navegador, con Node podrás utilizar todo ese conocimiento acumulado que tienes sobre Javascipt pero esta vez en el lado del servidor.</p>
+
+<p>Como se describe su <a href="http://nodejs.org" title="NodeJS">página oficial</a> “Es una plataforma construida sobre el motor Javascript <strong>V8 de Chrome</strong> para crear aplicaciones de forma fácil, rápida y escalable”.  Anteriormente mencioné que Node nos permite correr Javascript en el servidor utilizando el motor V8 que desarrolla Google para que el navegador Chrome muestre las páginas en tu PC. De esta forma podremos programar el servidor de una manera similar a lo que ya conoces de Javascript en el cliente.</p>
+
+<p>Aunque seguimos utilizando el mismo lenguaje hay algunas diferencias entre  programar del lado del cliente y del servidor. Existen algunas características únicas que tiene Node que nos proporcionan algunas ventajas sobre otros lenguajes. Como estamos acostumbrados, Javascript es un lenguaje orientado a eventos lo que nos permite tomar acciones en el momento específico en que el usuario interactúa con la página como dar un clic o enviar un formulario. En el lado del servidor Node también tiene la posibilidad de manejar eventos, pero de una manera diferente ya que no tenemos un DOM, pero de la misma forma que esperamos a que el usuario ejecute alguna acción con Node escuchara eventos como la carga de datos de la Base de Datos o transferencia de archivos.</p>
+
+<p>Una de las características más potentes de Node sobre otros lenguajes de servidor es que está diseñado para evitar esperar que las cosas pasen para responder. Esto hace una real diferencia con respecto a los demás servidores tradicionales, por ejemplo en PHP cuando hace una petición a la base de datos se quedará esperando y no realizará ninguna otra acción hasta que la se devuelvan los resultados. Lo anterior mencionado no sucede con Node ya que es capaz de realizar varias operaciones de manera simultánea y tomar acciones cuando cada una de estas haya terminado de ejecutarse.</p>
+
+<p>Otra de las características en las que Node es realmente bueno es creando aplicaciones en tiempo real, donde se mantiene una conexión entre el cliente y el servidor y una transferencia de datos en tiempo real. Esto permite que aplicaciones como los chats, servidores de juegos, de transmisión y  acceso a datos.</p>
+
+<p>Eso no es todo, Node es capaz realizar muchas cosas más y es lo que se tratará a lo largo de esta serie de publicaciones sobre NodeJS.</p>
+
+<h3 id="como-obtenerlo">Como obtenerlo</h3>
+
+<p>Existen varias vías para obtener NodeJS y la principal es a través de su sitio web <a href="http://nodejs.org">http://nodejs.org</a> donde siempre encontrarás la última versión de su compilación para todas las plataformas disponibles. En este artículo abarcaré su uso sobre Windows x64. En la página oficial encontrarás las instalaciones pre compiladas para 32 y 64 bits de Windows listas para descargar e instalar.</p>
+
+<p>Si no deseas utilizar una versión pre compilada y quieres compilar tu propio Node en la wiki del proyecto <a href="https://github.com/joyent/node/wiki/Installation">https://github.com/joyent/node/wiki/Installation</a> puedes encontrar los pasos pare hacerlo.</p>
+
+<p>La tercera vía por la que podemos obtenerlo es a través del gestor de paquetes de Windows llamado Chocolatey. De esta forma podremos instalar Node a través de la consola de Windows.</p>
+
+<h3 id="instalacin">Instalación</h3>
+
+<p>Si optaste por descargar la versión compilada, una vez lo tengas ya en tu PC ejecutas el instalador y recorre los pasos hasta el final de la instalación.</p>
+
+<p>En caso de que prefieras utilizar el gestor de paquetes de Windows Chocolatey teniéndolo previamente instalado en el sistema ejecutas el comando</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>choco install nodejs.install
+</code></pre>
+</div>
+
+<p>Después de tenerlo instalado en el sistema podemos verificar si está listo para su uso. Para comprobarlo abrimos una consola de Windows y ejecutamos el comando.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>node -v
+</code></pre>
+</div>
+
+<p>El cual debe devolver un mensaje con la versión de Node que tenemos instalado como aparece en la siguiente imagen</p>
+
+<p><img src="http://maikelrivero.dev/wp-content/uploads/2015/06/node-version.png" alt="node-version" title="node-version" /></p>
+
+<p>En caso de que hayas instalado a través de Chocolatey también deberías poder ejecutar el comando anterior. Si al ejecutar el comando no obtenemos la versión de Node como respuesta quizás es que el comando node no está disponible. Esto se debe a que no se ha registrado en las variables de entorno del Sistema Operativo. Para resolver este problema te sugiero que leas el artículo <a href="http://maikelrivero.dev/2015/06/agregando-node-en-la-consola-de-windows/">Agregando Node en la consola de Windows</a>.</p>
+
+<p>Ahora ya tenemos NodeJS instalado en el sistema y listo para comenzar a usarlo.</p>
+
+<h3 id="gestor-de-paquetes-npm">Gestor de paquetes npm</h3>
+
+<p>NodeJs en si está pensado para realizar tareas de servidor, pero que pasa cuando queremos crear una aplicación web, en el momento nos damos cuenta que no está preparado para tales fines. Pero no es un problema, cuando instalamos Node en el sistema este vino acompañado por <strong>npm</strong> el gestor de paquetes de Node. Este gestor será el encargado de obtener todo tipo de paquetes que necesite nuestra aplicación para su funcionamiento.</p>
+
+<p>A lo largo del uso de NodeJS para crear  aplicaciones del lado del servidor haremos un uso extensivo de la herramienta <strong>npm</strong> para obtener paquetes como <strong>ExpressJs</strong>, <strong>Socket.io</strong>, <strong>mongoose</strong> y muchos más. Para comprobar que tenemos npm instalado podemos ir hasta la consola de Windows y ejecutar el siguiente comando.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>npm -v
+</code></pre>
+</div>
+
+<p>Si todo está bien obtendremos una respuesta con la versión de npm que tenemos instalado en el sistema como la imagen que se muestra a continuación.</p>
+
+<p><img src="http://maikelrivero.dev/wp-content/uploads/2015/06/npm-version.png" alt="npm-version" title="npm-version" /></p>
+
+<h3 id="conclusiones">Conclusiones</h3>
+
+<p>Si has realizado los pasos de manera correcta creo que no debes tener problemas para comenzar a utilizar NodeJS. A partir de este momento tienes una nueva vía para hacer uso de tus habilidades con Javascript y comenzar a construir tus servidores utilizando el mismo lenguaje que ya conoces. A medida que comiences  a crear tus propios proyectos te darás cuenta porque Node es el lenguaje con más rápido crecimiento desde su creación y por qué la comunidad está tan activa con respecto a él.</p>
+
+<p>Si tienes alguna duda con respecto a lo mencionado en este artículo no dudes en preguntar dejando un comentario, siempre estoy en la mejor disponibilidad de aclarar las dudas mientras tenga el conocimiento. Si esta publicación te ha parecido útil de alguna forma para tu aprendizaje, compártela con tus amigos y no olvides regresar a por más.</p>
+</article></div></div>
+<footer><div class="row"><div class="col col-4"><p></p></div></div></footer></div></body></html>
